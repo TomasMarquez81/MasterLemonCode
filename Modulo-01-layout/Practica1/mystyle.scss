@@ -1,0 +1,208 @@
+@use 'sass:color';
+/***** Ejercicio 2 *****/
+@use 'templateA' as template;
+//@use 'templateB' as template;
+/***** /Ejercicio 2 *****/
+
+$steps: 4;
+$intensity: 20%;
+$colors: (
+    "color-1": red,
+    "color-2": blue,
+    "color-3": green
+);
+
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: aquamarine;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h2{
+    padding: 1rem 2rem;
+    border-top: 4px solid darkred;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    
+    & div{
+        padding: 50px 25px;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+    @media (width< 1120px ){
+        flex-direction: column;
+        & div{
+            text-align: center;
+            font-size: 1.2rem;
+        }
+    }
+}
+
+@each $name, $color in $colors {
+
+    // Oscurecer
+    @for $i from 1 through $steps {
+        
+        .#{$name} {
+                .darken-#{$i} {
+                background-color: color.scale($color, $lightness: -1 * $i * $intensity);
+                color: color.scale(invert($color), $lightness: -1 * $i * ($intensity - 10%));
+            }
+        }
+    }
+
+    // Base
+        .#{$name} {
+            .base-color {
+                background-color: $color;
+                color: white;
+            }
+        }
+
+    // Aclarar
+    @for $i from 1 through $steps {
+        .#{$name}{
+            .lighten-#{$i} {
+                background-color: color.scale($color, $lightness: $i * $intensity);
+                color: color.scale(invert($color), $lightness: $i * ($intensity));
+            }
+        }
+    }
+}
+
+/***** Ejercicio 2 *****/
+
+.container-colum{
+    display: inline-flex;
+    flex-direction: column;
+    margin: 25px;
+    gap: 1px;
+    >div{
+        padding: 25px;
+        text-align: center;
+        border-radius: template.$size-border-radius;
+    }
+        @media (width< 1120px) {
+            width: 90vw;
+        }
+}
+.base{
+    background-color: template.$base-color;
+}
+.important {
+    background-color: template.$Importan-color;
+}
+.warning {
+    background-color: template.$warning-color;
+}
+.principal-font{
+    font-family: template.$principal-font;
+}
+.secondary-font {
+    font-family: template.$secondary-font;
+}
+.box-shadow {
+    border: 1px solid black;
+    box-shadow: template.$shadow-box;
+}
+
+/***** Ejercicio 3 *****/
+
+.menu{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    background-color: #006a7b;
+    align-items: stretch;
+
+    a {
+        display: flex;
+        align-items: center;
+        padding: 0 50px;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        transition: background-color 0.5s;
+
+        &:hover {
+            background-color: #2f4858;
+        }
+    }
+
+    @media (width < 768px) {
+        flex-direction: column;
+        height: auto;
+
+        a {
+            justify-content: center;
+            padding: 20px 0;
+        }
+    }
+}
+
+/***** Ejercicio 4 *****/
+
+.container-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto-fill;
+    width: 500px;
+    background-color: #eeeeee;
+    border: 1px solid #dbdbdb;
+    img{
+        width: 100%;
+    }
+    .button{
+        background-color: #7bbe46;
+        color: white;
+        font-size: 1.4rem;
+        text-align: center;
+        padding: 30px 0;
+        margin-bottom: 0;
+        cursor: pointer;
+        transition: border-radius, background-color, color 0.5s;
+        &:hover{
+            border-radius: 10px;
+            background-color: #9bc07e;
+            color: rgb(88, 88, 88);
+        }
+
+    }
+    .content{
+        padding: 1rem;
+        div{
+            margin: 1rem 0;
+        }
+        .title{
+            font-family: template.$principal-font;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+        .text{
+            font-family: template.$secondary-font;
+            font-weight: 400;
+        }
+        .published{
+            text-align: right;
+            font-family: template.$secondary-font;
+            font-weight: bold;
+            span{
+                color:#7bbe46;
+                font-weight: lighter;
+                cursor: pointer;
+            }
+        }
+    }
+}
