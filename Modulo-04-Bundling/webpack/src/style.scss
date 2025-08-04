@@ -1,0 +1,75 @@
+:root {
+    --primary: #0047AB;
+    --secondary: #DC143C;
+    --background: #F4F6F9;
+    --text-main: #212529;
+    --text-inverse: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: var(--background);
+    color: var(--text-main);
+    font-family: 'Segoe UI', sans-serif;
+    box-sizing: border-box;
+    border: 1rem solid var(--primary);
+    min-height: 100vh;
+    margin: 0;
+    padding: 1rem;
+}
+
+
+header{
+    padding: 1rem;
+    img{
+        width: 100%;
+        border-radius: 5px;
+    }
+}
+
+.red-backgroundP {
+    background-color: var(--secondary);
+    color: var(--text-inverse);
+    padding: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.superman-card {
+    width: 18rem;
+        margin: 0 auto;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: none;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.superman-card .btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.superman-card .btn-primary:hover {
+    background-color: #003a91;
+}
+
+img{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.final{
+    margin-top: 1rem;
+    padding: 3rem;
+    border-radius: 10px;
+    background-color: var(--secondary);
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+}

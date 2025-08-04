@@ -1,0 +1,12 @@
+$background: teal;
+
+.resultBackground{
+    border-radius: 10px 10px 0 0  ;
+    display: inline-block;
+    width: 100%;
+    padding: 3rem;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    background-color: $background;
+}
