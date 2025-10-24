@@ -1,12 +1,9 @@
 import React from "react";
+import { AppContextRouter } from "./router/app.context.router";
 
-export const App = () => {
-    const [company, setCompany] = React.useState("");
+export const App: React.FC = () =>{
+    
     return (
-        <>
-            <h1>Hello Vite + React!</h1>
-            <input type="text" value={company}/>
-            <button>Buscar</button>
-        </>
+        <AppContextRouter />
     );
 }

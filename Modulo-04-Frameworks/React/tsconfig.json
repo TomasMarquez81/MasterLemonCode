@@ -16,7 +16,13 @@
         "skipLibCheck": true,
         "sourceMap": true,
         "target": "ESNext",
-        "useDefineForClassFields": true
+        "useDefineForClassFields": true,
+        "baseUrl": "./src",
+        "paths": {
+            "@/*": [
+                "*"
+            ]
+        }
     },
     "include": [
         "src"

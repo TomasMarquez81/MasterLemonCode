@@ -1,0 +1,276 @@
+/****** Reset CSS *****/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    background-color: #171717;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/****** Custom CSS *****/
+
+
+.layout-app-container {
+    font-family: Sans-Serif;
+    background-color: #171717;
+    color: #d3d3d3;
+    min-height: 100vh;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1em;
+    background-color: #205575;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    height: 4em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 10px 10px;
+    .iconsHeader{
+        display: flex;
+        gap: 2em;
+        align-items: center;
+    }   
+}
+
+.user-list-container {
+    display: grid;
+    grid-template-columns: 80px 1fr 3fr;
+    grid-template-rows: 20px;
+    grid-auto-rows: 80px;
+    grid-gap: 10px 5px;
+    max-width: 40vw;
+}
+
+.user-list-container {
+    img {
+        width: 80px;
+    }
+}
+
+.menuApi{
+    display: flex;
+    width: 100vw;
+    gap: 2em;
+    justify-content: center;
+    img{
+        width: 10em;
+    }
+    div{
+            display: flex;
+            align-items: center;
+    }
+}
+
+.login-container{
+
+    width: 20em;
+    margin: auto;
+    margin-top: 5em;
+    .form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding-left: 2em;
+            padding-right: 2em;
+            padding-bottom: 0.4em;
+            background-color: #171717;
+            border-radius: 25px;
+            border: 1px solid #d3d3d3;
+            box-shadow: 2px 5px 10px rgba(243, 243, 243, 0.637);
+            transition: .4s ease-in-out;
+        }
+    
+        .form:hover {
+            transform: scale(1.05);
+            border: 2px solid #5c5c5c;
+            box-shadow: -8px -5px 10px rgba(243, 243, 243, 0.637);
+        }
+    
+        #heading {
+            text-align: center;
+            margin: 2em;
+            color: rgb(255, 255, 255);
+            font-size: 1.2em;
+        }
+    
+        .field {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5em;
+            border-radius: 25px;
+            padding: 0.6em;
+            border: none;
+            outline: none;
+            color: white;
+            background-color: #171717;
+            box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+        }
+    
+        .input-icon {
+            height: 1.3em;
+            width: 1.3em;
+            fill: white;
+        }
+    
+        .input-field {
+            background: none;
+            border: none;
+            outline: none;
+            width: 100%;
+            color: #d3d3d3;
+        }
+    
+        .form .btn {
+            margin-top: 2.5em;
+        }
+    
+        .button {
+            margin-bottom: 3em;
+            padding: 0.5em;
+            width: 100%;
+        }
+    
+        .button:hover {
+            background-color: black;
+            color: white;
+        }
+}
+.TableContainer {
+    background-color: #171717;
+    border-radius: 25px;
+}
+
+.CardDetailGithub{
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+}
